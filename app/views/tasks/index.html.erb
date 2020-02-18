@@ -1,0 +1,19 @@
+<h1>To-do List</h1>
+<div id="back">
+
+  <div id="line">
+    <% @index.each do |t| %>
+      <p class="card"><%= link_to t.title, task_path(t) %></p>
+    <% if t.completed == false %>
+      <i class="far fa-square"></i>
+    <% else %>
+      <i class="far fa-check-square"></i>
+    <% end %>
+  <% end %>
+
+
+    <div class="side">
+      <h3><strong><%= link_to "add new task", new_task_path %></strong></h3>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div id="back">
+  <br><br><br>
+<h1 class="list" ><%= @task.title %></h1>
+<h3 class="list" ><%= @task.details %></h3>
+
+<div class="card">
+  <% if @task.completed == false %>
+    <p>Mark task as complete:</p>
+    <%= link_to complete_task_path(@task), method: :patch do %>
+      <i class="far fa-square" id="click"></i>
+    <% end %>
+  <% else %>
+    <p>Completed!</p>
+    <i class="far fa-check-square"></i>
+  <% end %>
+</div>
+
+<div id="line" class="side">
+<%= link_to "Home", home_path %>
+</div>
+<div id="line" class="side">
+<%= link_to "Edit a task", edit_task_path %>
+</div>
+<div id="line" class="side">
+<%= link_to "Delete", delete_task_path(@task), method: :delete %>
+</div>
+</div>

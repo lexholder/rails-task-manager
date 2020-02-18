@@ -1,5 +1,5 @@
 class ChangeColumn < ActiveRecord::Migration[5.2]
   def change
-    change_column :task, :completed, false
+    change_column :tasks, :completed, :boolean, default: false
   end
 end
